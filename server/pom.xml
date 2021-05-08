@@ -222,6 +222,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
+                    <argLine>
+                        --illegal-access=permit
+                    </argLine>
                     <skipTests>${iotdb.ut.skip}</skipTests>
                     <systemProperties>
                         <IOTDB_CONF>src/test/resources</IOTDB_CONF>
@@ -241,6 +244,9 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <argLine>
+                        --illegal-access=permit
+                    </argLine>
                     <skipTests>${iotdb.test.skip}</skipTests>
                     <skipITs>${iotdb.it.skip}</skipITs>
                 </configuration>
