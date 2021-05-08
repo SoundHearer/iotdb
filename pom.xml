@@ -155,7 +155,7 @@
         <client-cpp>false</client-cpp>
         <!-- disable enforcer by default-->
         <enforcer.skip>true</enforcer.skip>
-        <spotless.version>2.5.0</spotless.version>
+        <!-- spotless.version>2.5.0</spotless.version-->
     </properties>
     <!--
         if we claim dependencies in dependencyManagement, then we do not claim
@@ -621,7 +621,7 @@
                         </excludes>
                     </configuration>
                 </plugin>
-                <plugin>
+                <!--plugin>
                     <groupId>com.diffplug.spotless</groupId>
                     <artifactId>spotless-maven-plugin</artifactId>
                     <version>${spotless.version}</version>
@@ -646,7 +646,7 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
+                </plugin-->
             </plugins>
         </pluginManagement>
         <plugins>
@@ -946,7 +946,7 @@
     </build>
     <profiles>
         <!-- spotless is too slow, so we put it into a profile to skip it if needed -->
-        <profile>
+        <!--profile>
             <id>spotless</id>
             <activation>
                 <!-- activeByDefault does not take effect-->
@@ -962,7 +962,7 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
+        </profile-->
         <!--
           A set of profiles defining the different properties needed to download and run thrift
           They are automatically activated depending on the OS you are using.
