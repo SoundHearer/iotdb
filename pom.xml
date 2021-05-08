@@ -155,7 +155,6 @@
         <client-cpp>false</client-cpp>
         <!-- disable enforcer by default-->
         <enforcer.skip>true</enforcer.skip>
-        <!-- spotless.version>2.5.0</spotless.version-->
     </properties>
     <!--
         if we claim dependencies in dependencyManagement, then we do not claim
@@ -621,32 +620,6 @@
                         </excludes>
                     </configuration>
                 </plugin>
-                <!--plugin>
-                    <groupId>com.diffplug.spotless</groupId>
-                    <artifactId>spotless-maven-plugin</artifactId>
-                    <version>${spotless.version}</version>
-                    <configuration>
-                        <java>
-                            <googleJavaFormat>
-                                <version>1.7</version>
-                                <style>GOOGLE</style>
-                            </googleJavaFormat>
-                            <importOrder>
-                                <order>org.apache.iotdb,,javax,java,\#</order>
-                            </importOrder>
-                            <removeUnusedImports/>
-                        </java>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>spotless-check</id>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin-->
             </plugins>
         </pluginManagement>
         <plugins>
@@ -946,23 +919,7 @@
     </build>
     <profiles>
         <!-- spotless is too slow, so we put it into a profile to skip it if needed -->
-        <!--profile>
-            <id>spotless</id>
-            <activation>
-                <!-- activeByDefault does not take effect-->
-                <file>
-                    <exists>.</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.diffplug.spotless</groupId>
-                        <artifactId>spotless-maven-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile-->
+
         <!--
           A set of profiles defining the different properties needed to download and run thrift
           They are automatically activated depending on the OS you are using.
