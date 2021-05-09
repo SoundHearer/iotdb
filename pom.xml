@@ -550,7 +550,7 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <configuration>
-                        <argLine>${argLine} --illegal-access=permit -Xmx1024m</argLine>
+                        <argLine>${argLine} --illegal-access=debug -Xmx1024m</argLine>
                     </configuration>
                 </plugin>
                 <!--
@@ -865,7 +865,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <argLine>
-                        --illegal-access=permit
+                        --illegal-access=debug
                     </argLine>
                 </configuration>
                 <executions>
